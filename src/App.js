@@ -1,23 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import { AppBar, Box, Container, CssBaseline, Toolbar, Typography } from '@mui/material';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div sx={{ height: '100%', backgroundColor: 'orange', width: '100%' }}>
+      <CssBaseline />
+      <Box sx={{ flexGrow: 1 }}>
+        <AppBar position="static">
+          <Toolbar sx={{ backgroundColor: 'black' }}>
+            <Typography variant="h6" sx={{ flexGrow: 1 }}>Steve Colvin's Portfolio</Typography>
+            <Typography>test</Typography>
+          </Toolbar>
+        </AppBar>
+        <Box sx={{ flexGrow: 1, backgroundColor: 'darkgrey' }}>
+          <Container sx={{ backgroundColor: 'yellow', }}>
+            <Typography>wtf</Typography>
+          </Container>
+        </Box>
+      </Box>
     </div>
   );
 }
