@@ -1,24 +1,25 @@
-import { Box, CardMedia, Card, Typography, Container, Paper, CardContent, Stack } from '@mui/material';
+import { CardMedia, Card, Typography, Container, CardContent, Stack, Box, Divider, useMediaQuery } from '@mui/material';
 import Hero from './Hero';
 
 
 function Rows({ name, description, photos, styles }) {
+  const { groupHeight = 300 } = styles
+  const isMobile = useMediaQuery(theme => theme.breakpoints.down('sm'))
 
   return (
     <Container>
       <Hero {...{ name, description }} />
-      <Stack spacing={5}>
-
-        {photos.map(({ uri, title, text }) => (
-          <Card sx={{ display: 'flex', flexDirection: 'row' }}>
+      <Stack spacing={5} divider={<Divider flexItem />}>
+        {photos.map(({ uri, title, text, width, height }) => (
+          <Card sx={{ display: 'flex', flexDirection: isMobile ? 'column' : 'row', alignItems: 'center' }}>
             <CardMedia
-              component='img'
+              {...(uri.includes('mp4')
+                ? { component: 'video', autoPlay: true, loop: true, playsInline: true, controls: false }
+                : { component: 'img' })}
               image={uri}
-              sx={{ objectFit: 'contain', height: 300, }}
+              sx={{ objectFit: 'cover', height: groupHeight, width: width * groupHeight / height, backgroundColor: 'white', }}
             />
-            <Box sx={{ height: 50, width: 50, backgroundColor: 'yellow' }} />
-            <Box sx={{ flex: 1 }} />
-            <CardContent sx={{ flex: '1 0 auto' }}>
+            <CardContent sx={{ flex: 1, }}>
               <Typography variant='h6'>{title}</Typography>
               <Typography>{text}</Typography>
             </CardContent>

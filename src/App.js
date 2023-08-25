@@ -1,10 +1,9 @@
-import { Box, Container, CssBaseline, ThemeProvider, createTheme, } from '@mui/material';
+import { Box, Container, CssBaseline, ThemeProvider, Typography, createTheme, } from '@mui/material';
 import './App.css';
 import Header from './Header';
 import Hero from './Hero';
 import Body from './Body';
-import { useCallback, useMemo, useState } from 'react';
-import Project from './Project';
+import { useCallback, useState } from 'react';
 import Rows from './Rows';
 import Gallery from './Gallery';
 
@@ -18,23 +17,15 @@ function App() {
   const [project, setProject] = useState(null)
   const back = useCallback(() => setProject(null), [])
 
-  // const Project = useMemo(() => {
-  //   switch (project?.component) {
-  //     case 'rows':
-  //     default:
-  //       return Rows
-  //   }
-  // }, [project])
-
   return (
     <div className="App">
       <CssBaseline />
       <ThemeProvider theme={theme} >
-        <Box sx={{ flexGrow: 1, backgroundColor: '#282c34', paddingBottom: 12 }}>
+        <Box sx={{ flexGrow: 1, paddingBottom: 12 }}>
           <Header back={project && back} />
           {!project
             ? <Container>
-              <Hero />
+              <Hero name='Steve Colvin' description='Programming and design portfolio' />
               <Body {...{ setProject }} />
             </Container>
             : project.component === 'rows'
@@ -42,6 +33,10 @@ function App() {
               : <Gallery {...project} />
           }
         </Box>
+
+        <Container sx={{ paddingBottom: 2 }}>
+          <Typography>Copyright Steve Colvin 2023. All rights reserved.</Typography>
+        </Container>
       </ThemeProvider>
     </div>
   );

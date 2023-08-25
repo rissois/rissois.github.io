@@ -1,5 +1,4 @@
-import { Box, Card, CardContent, CardMedia, CardActionArea, Typography, ImageList, ImageListItem, Stack, Grid, SvgIcon } from '@mui/material';
-import Grid2 from '@mui/material/Unstable_Grid2/Grid2';
+import { Card, CardContent, CardMedia, CardActionArea, Typography, Grid, } from '@mui/material';
 import { CARDS, DETAILS } from './projects/All';
 
 
@@ -7,15 +6,15 @@ import { CARDS, DETAILS } from './projects/All';
 function Body({ setProject }) {
   return (
     <Grid container spacing={4}>
-      {CARDS.map(({ uri, name, brief, link, Icon }) => (
-        <Grid item key={uri}>
+      {CARDS.map(({ uri, key, name, brief, link, Icon }) => (
+        <Grid item key={key}>
           <Card sx={{ width: 240 }}>
-            <CardActionArea onClick={() => link ? window.open(link, "_blank", "noreferrer") : setProject(DETAILS[name])}>
+            <CardActionArea onClick={() => link ? window.open(link, "_blank", "noreferrer") : setProject(DETAILS[key])}>
               <CardMedia
                 component='img'
                 image={'/thumbnails/' + uri}
                 // sx={{ objectFit: 'contain', height: 240, }}
-                sx={{ objectFit: 'cover', height: 240, }}
+                sx={{ objectFit: 'cover', height: 240, backgroundColor: 'white' }}
               />
               <CardContent>
                 <Typography sx={{ fontSize: 18, fontWeight: 700 }}>{name}</Typography>
