@@ -1,15 +1,16 @@
 import { Card, CardContent, CardMedia, CardActionArea, Typography, Grid, } from '@mui/material';
-import { CARDS, DETAILS } from './projects/All';
+import { CARDS } from './projects/All';
+import { Link } from 'react-router-dom';
 
 
 
-function Body({ setProject }) {
+function Body() {
   return (
     <Grid container spacing={4}>
       {CARDS.map(({ uri, key, name, brief, link, Icon }) => (
         <Grid item key={key}>
           <Card sx={{ width: 240 }}>
-            <CardActionArea onClick={() => link ? window.open(link, "_blank", "noreferrer") : setProject(DETAILS[key])}>
+            <CardActionArea component={Link} to={link ? '' : '/' + key} onClick={() => link ? window.open(link, "_blank", "noreferrer") : {}}>
               <CardMedia
                 component='img'
                 image={'/thumbnails/' + uri}

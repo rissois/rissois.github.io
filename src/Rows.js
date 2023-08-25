@@ -11,7 +11,7 @@ function Rows({ name, description, photos, styles }) {
       <Hero {...{ name, description }} />
       <Stack spacing={5} divider={<Divider flexItem />}>
         {photos.map(({ uri, title, text, width, height }) => (
-          <Card sx={{ display: 'flex', flexDirection: isMobile ? 'column' : 'row', alignItems: 'center' }}>
+          <Card key={title} sx={{ display: 'flex', flexDirection: isMobile ? 'column' : 'row', alignItems: 'center' }}>
             <CardMedia
               {...(uri.includes('mp4')
                 ? { component: 'video', autoPlay: true, loop: true, playsInline: true, controls: false }

@@ -6,6 +6,12 @@ import Body from './Body';
 import { useCallback, useState } from 'react';
 import Rows from './Rows';
 import Gallery from './Gallery';
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from 'react-router-dom';
+import { DETAILS } from './projects/All';
+import Error from './Error';
 
 const theme = createTheme({
   palette: {
@@ -13,25 +19,46 @@ const theme = createTheme({
   }
 })
 
+const router = createBrowserRouter([
+  {
+    path: '/torte',
+    element: <Rows {...DETAILS.torte} />
+  },
+  {
+    path: '/academic',
+    element: <Gallery {...DETAILS.academic} />
+  },
+  {
+    path: '/vexillography',
+    element: <Rows {...DETAILS.vexillography} />
+  },
+  {
+    path: '/photography',
+    element: <Gallery {...DETAILS.photography} />
+  },
+  {
+    path: '/',
+    element: <Home />,
+    errorElement: <Error />
+  }
+])
+
+function Home() {
+  return <Container>
+    <Hero name='Steve Colvin' description='Programming and design portfolio' />
+    <Body />
+  </Container>
+}
+
 function App() {
-  const [project, setProject] = useState(null)
-  const back = useCallback(() => setProject(null), [])
 
   return (
     <div className="App">
       <CssBaseline />
       <ThemeProvider theme={theme} >
         <Box sx={{ flexGrow: 1, paddingBottom: 12 }}>
-          <Header back={project && back} />
-          {!project
-            ? <Container>
-              <Hero name='Steve Colvin' description='Programming and design portfolio' />
-              <Body {...{ setProject }} />
-            </Container>
-            : project.component === 'rows'
-              ? <Rows {...project} />
-              : <Gallery {...project} />
-          }
+          <Header />
+          <RouterProvider router={router} />
         </Box>
 
         <Container sx={{ paddingBottom: 2 }}>
