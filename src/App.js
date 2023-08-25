@@ -27,19 +27,19 @@ const router = createBrowserRouter([
     errorElement: <Error />,
     children: [
       {
-        path: '/torte',
+        path: '/torte/*',
         element: <Rows {...DETAILS.torte} />
       },
       {
-        path: '/academic',
+        path: '/academic/*',
         element: <Gallery {...DETAILS.academic} />
       },
       {
-        path: '/vexillography',
+        path: '/vexillography/*',
         element: <Rows {...DETAILS.vexillography} />
       },
       {
-        path: '/photography',
+        path: '/photography/*',
         element: <Gallery {...DETAILS.photography} />
       },
       {
