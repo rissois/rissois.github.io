@@ -8,6 +8,7 @@ import Rows from './Rows';
 import Gallery from './Gallery';
 import {
   createBrowserRouter,
+  Outlet,
   RouterProvider,
 } from 'react-router-dom';
 import { DETAILS } from './projects/All';
@@ -21,50 +22,63 @@ const theme = createTheme({
 
 const router = createBrowserRouter([
   {
-    path: '/torte',
-    element: <Rows {...DETAILS.torte} />
-  },
-  {
-    path: '/academic',
-    element: <Gallery {...DETAILS.academic} />
-  },
-  {
-    path: '/vexillography',
-    element: <Rows {...DETAILS.vexillography} />
-  },
-  {
-    path: '/photography',
-    element: <Gallery {...DETAILS.photography} />
-  },
-  {
     path: '/',
-    element: <Home />,
-    errorElement: <Error />
+    element: <Layout />,
+    errorElement: <Error />,
+    children: [
+      {
+        path: '/torte',
+        element: <Rows {...DETAILS.torte} />
+      },
+      {
+        path: '/academic',
+        element: <Gallery {...DETAILS.academic} />
+      },
+      {
+        path: '/vexillography',
+        element: <Rows {...DETAILS.vexillography} />
+      },
+      {
+        path: '/photography',
+        element: <Gallery {...DETAILS.photography} />
+      },
+      {
+        path: '/',
+        element: <Home />
+      }
+    ]
   }
 ])
 
+function Layout() {
+  return (
+    <ThemeProvider theme={theme} >
+      <Box sx={{ flexGrow: 1, paddingBottom: 12 }}>
+        <Header />
+        <Outlet />
+      </Box>
+
+      <Container sx={{ paddingBottom: 2 }}>
+        <Typography>Copyright Steve Colvin 2023. All rights reserved.</Typography>
+      </Container>
+    </ThemeProvider>
+  )
+}
+
 function Home() {
-  return <Container>
-    <Hero name='Steve Colvin' description='Programming and design portfolio' />
-    <Body />
-  </Container>
+  return (
+    <Container>
+      <Hero name='Steve Colvin' description='Programming and design portfolio' />
+      <Body />
+    </Container>
+  )
 }
 
 function App() {
-
   return (
     <div className="App">
       <CssBaseline />
-      <ThemeProvider theme={theme} >
-        <Box sx={{ flexGrow: 1, paddingBottom: 12 }}>
-          <Header />
-          <RouterProvider router={router} />
-        </Box>
-
-        <Container sx={{ paddingBottom: 2 }}>
-          <Typography>Copyright Steve Colvin 2023. All rights reserved.</Typography>
-        </Container>
-      </ThemeProvider>
+      <RouterProvider router={router} />
     </div>
   );
 }
