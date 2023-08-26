@@ -1,6 +1,6 @@
 import { AppBar, Box, IconButton, Link, ListItem, ListItemIcon, ListItemText, Toolbar, useMediaQuery } from '@mui/material';
 import { ContactPage, GitHub, Home, LinkedIn } from '@mui/icons-material';
-import { Link as BrowswerLink, useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import React from 'react';
 
 const links = [
@@ -12,13 +12,14 @@ const links = [
 function Header() {
   const isMobile = useMediaQuery(theme => theme.breakpoints.down('sm'))
   const { pathname } = useLocation()
+  const navigate = useNavigate()
 
   return (
     <React.Fragment>
       <AppBar position="fixed" sx={{ backgroundColor: '#0404040', }}>
         <Toolbar sx={{ justifyContent: 'flex-end' }} >
           {pathname.length > 1 && <Box sx={{ flexGrow: 1 }}>
-            <IconButton component={BrowswerLink} to={'/'}><Home /></IconButton>
+            <IconButton onClick={() => navigate(-1)}><Home /></IconButton>
           </Box>}
           {links.map(({ name, uri, Icon, }) => (
             <Link key={name} href={uri} color="inherit" underline="none" target="_blank" rel="noopener noreferrer">
