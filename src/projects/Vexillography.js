@@ -1,8 +1,10 @@
 export const VEXILLOGRAPHY = {
   name: 'Vexillography',
   description: ['A flag means nothing without a group of individuals who seek a common identity and willingness to attach meaning to a collection of symbols. The ability to connect deeply with these designs, with passion and pride, is a unique characteristic of human culture and psyche. They are in essence a highly effective form of market that build both brand awareness and loyalty.',
-    'Some of these flags were created for r/vexillology (597k members) and their monthly flag contests, others for fun. I help build and maintain the contest site as well.'],
+    'Some of these flags were created for r/vexillology (600k members) and their monthly flag contests, others for fun. I help build and maintain the contest site as well.'],
   photos: [
+    { uri: '/flags/Tyrian.png', width: 1224, height: 816, title: 'The Tyrian State', text: 'September 2023 competition: a theorectical united Mediterranean Sea. First place. The Tyrian State uses tyrian purple, a prized dye made from thousands of sea shells that remains bright and rich as it ages.' },
+    { uri: '/flags/Elixira.png', width: 1756, height: 1144, title: 'Elixira', text: 'September 2023 competition: a theorectical united Mediterranean Sea. 14th place. Three "elixirs" that dominated trade in the region: wine of the amphora, olive oil in the olive tree, and the sea itself.' },
     { uri: '/flags/Chad.png', width: 1000, height: 600, title: 'Flag for Chad', text: 'August 2023 competition: redesign either the flag of Chad or Romania so they are no longer identical.' },
     { uri: '/flags/Japanese.png', width: 600, height: 400, title: 'Flag for Japanese', text: 'July 2023 competition: create a flag for any language with over 50M speakers. This design incorporated the Japanese caligraphy brushstroke with the Rising Sun in canton. It placed 5th.' },
     { uri: '/flags/Detroit.png', width: 1000, height: 600, title: 'Flag for Detroit', text: 'The Detroit flag violates some key rules of flag design (no words, no seals). This is a simplified version.' },
