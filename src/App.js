@@ -3,7 +3,6 @@ import './App.css';
 import Header from './Header';
 import Hero from './Hero';
 import Body from './Body';
-import { useCallback, useState } from 'react';
 import Rows from './Rows';
 import Gallery from './Gallery';
 import {
@@ -27,6 +26,10 @@ const router = createBrowserRouter([
     errorElement: <Error />,
     children: [
       {
+        path: '/',
+        element: <Home />
+      },
+      {
         path: '/torte/*',
         element: <Rows {...DETAILS.torte} />
       },
@@ -42,10 +45,6 @@ const router = createBrowserRouter([
         path: '/photography/*',
         element: <Gallery {...DETAILS.photography} />
       },
-      {
-        path: '/',
-        element: <Home />
-      }
     ]
   }
 ])
