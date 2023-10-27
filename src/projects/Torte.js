@@ -1,7 +1,10 @@
+import { Link, Typography } from '@mui/material';
+
 export const TORTE = {
   name: 'Torte',
   description: ['Slow checkouts and complex bill splitting were slowing business and creating bitter final impressions, yet restaurant software was not touching the guest experience. I started building a seamless payment interface to work across all restaurant platforms before the pandemic, but soon after pivoted to a complete point-of-sale system.',
-    'Torte delivered mobile ordering and mobile payment with item-level bill splitting at three restaurants in the Boston area before I returned to finish my PhD.'],
+    'Torte delivered mobile ordering and mobile payment with item-level bill splitting at three restaurants in the Boston area before I returned to finish my PhD.',
+    <div>You can view the source code <Link href="https://github.com/rissois/Torte" target="_blank" rel="noopener noreferrer">here</Link>.</div>],
   photos: [
     { uri: '/torte/menus.mp4', height: 2014, width: 1066, title: 'Photo panels', text: 'Most systems use tiny thumbnails no one can see. Photo panels make items stand out, and are customizable to drive sales toward items with higher margins or limited shelf life.' },
     { uri: '/torte/filters.mp4', height: 2014, width: 1066, title: 'Dietary filters', text: 'Collaborative ordering is the only way to let each guest use their own phone and ensure the kitchen only receives one ticket per table.' },
