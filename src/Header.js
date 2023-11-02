@@ -4,7 +4,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import React from 'react';
 
 const links = [
-  { name: 'RESUME', uri: '/Steve Colvin Resume.pdf', Icon: ContactPage },
+  // { name: 'RESUME', uri: '/Steve Colvin Resume.pdf', Icon: ContactPage },
   { name: 'LINKEDIN', uri: 'https://www.linkedin.com/in/steve-colvin-664b0363/', Icon: LinkedIn },
   { name: 'GITHUB', uri: 'https://github.com/rissois', Icon: GitHub },
 ]

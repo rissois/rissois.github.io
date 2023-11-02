@@ -1,4 +1,4 @@
-import { Box, Container, CssBaseline, ThemeProvider, Typography, createTheme, } from '@mui/material';
+import { Box, Container, CssBaseline, Link, ThemeProvider, Typography, createTheme, } from '@mui/material';
 import './App.css';
 import Header from './Header';
 import Hero from './Hero';
@@ -67,7 +67,7 @@ function Layout() {
 function Home() {
   return (
     <Container>
-      <Hero name='Steve Colvin' description='Programming and design portfolio' />
+      <Hero name='Steve Colvin' description={[<div>Design portfolio (for programming, visit my <Link href="https://github.com/rissois/" target="_blank" rel="noopener noreferrer">Github page</Link>)</div>]} />
       <Body />
     </Container>
   )
