@@ -16,7 +16,6 @@ function Gallery({ name, description, photos, styles }) {
               <CardMedia
                 component='img'
                 image={uri}
-                // sx={{ objectFit: 'contain', height: 240, }}
                 sx={{ padding: groupPadding, objectFit: 'cover', height: imageHeight || groupHeight, backgroundColor: 'white', }}
               />
               <CardContent>

@@ -1,5 +1,5 @@
 import { AppBar, Box, IconButton, Link, ListItem, ListItemIcon, ListItemText, Toolbar, useMediaQuery } from '@mui/material';
-import { ContactPage, GitHub, Home, LinkedIn } from '@mui/icons-material';
+import { GitHub, Home, LinkedIn } from '@mui/icons-material';
 import { useLocation, useNavigate } from 'react-router-dom';
 import React from 'react';
 

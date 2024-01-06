@@ -1,4 +1,4 @@
-import { CardMedia, Card, Typography, Container, CardContent, Stack, Box, Divider, useMediaQuery } from '@mui/material';
+import { CardMedia, Card, Typography, Container, CardContent, Stack, Divider, useMediaQuery } from '@mui/material';
 import Hero from './Hero';
 
 
@@ -10,14 +10,14 @@ function Rows({ name, description, photos, styles }) {
     <Container>
       <Hero {...{ name, description }} />
       <Stack spacing={5} divider={<Divider flexItem />}>
-        {photos.map(({ uri, title, text, width, height }) => (
+        {photos.map(({ uri, title, text, width, height, overrideSize }) => (
           <Card key={title} sx={{ display: 'flex', flexDirection: isMobile ? 'column' : 'row', alignItems: 'center' }}>
             <CardMedia
               {...(uri.includes('mp4')
                 ? { component: 'video', autoPlay: true, loop: true, playsInline: true, controls: false }
                 : { component: 'img' })}
               image={uri}
-              sx={{ objectFit: 'cover', height: groupHeight, width: width * groupHeight / height, backgroundColor: 'white', }}
+              sx={{ objectFit: 'cover', height: overrideSize ? height : groupHeight, width: overrideSize ? width : width * groupHeight / height, backgroundColor: 'white', }}
             />
             <CardContent sx={{ flex: 1, }}>
               <Typography variant='h6'>{title}</Typography>
