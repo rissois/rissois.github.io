@@ -67,7 +67,10 @@ function Layout() {
 function Home() {
   return (
     <Container>
-      <Hero name='Steve Colvin' description={[<div>Design portfolio (for programming, visit my <Link href="https://github.com/rissois/" target="_blank" rel="noopener noreferrer">Github page</Link>)</div>]} />
+      <Hero name='Steve Colvin' description={[
+        <div>Welcome to my visual design portfolio!</div>,
+        <div>If you'd like to see my coding portfolio, please visit my <Link href="https://github.com/rissois/" target="_blank" rel="noopener noreferrer">Github page</Link>.</div>
+      ]} />
       <Body />
     </Container>
   )
