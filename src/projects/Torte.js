@@ -3,14 +3,22 @@ import { Link } from "@mui/material";
 export const TORTE = {
   name: "Torte",
   description: [
-    "Restaurants spend 31-47% of their profits on IT trying to stay up-to-date with third-party services. Torte was building the Guest Point-of-Sale, a mobile app that connected customers directly to the restaurant's backend without any middlemen.",
-    "Torte delivered mobile ordering and mobile payment at four restaurants in the Boston area before I returned to finish my PhD.",
+    "I took a hiatus from my PhD at MIT to build a startup in the restaurant tech space despite having no prior experience in restaurants or software.",
+
+    "I created the Guest POS, the first system that let customers collaboratively order and pay from multiple phones. I also introduced dietary menu filtering and new analytics, like item sharing, to help restaurants understand group behavior.",
+
+    "I onboarded 4 restaurant partners and processed $8K in beta sales before returning to finish the PhD. Partners leveraged new analytics to optimize their menus and pricing, and servers saved 33% of their time-per-table allowing them to focus more on hospitality.",
     <div>
       You can view the source code{" "}
       <Link
         href="https://github.com/rissois/Torte"
         target="_blank"
         rel="noopener noreferrer"
+        style={{
+          color: "#0b3b9c",
+          textDecoration: "none",
+          fontWeight: "bold",
+        }}
       >
         here
       </Link>

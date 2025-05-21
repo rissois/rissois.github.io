@@ -77,16 +77,20 @@ function Home() {
         name="Steve Colvin"
         description={[
           <div>
-            Entrepreneurial product manager and MIT PhD. Experienced leader who
-            launches innovative solutions on tight budgets and applies
-            proficiency across domains to break down complex problems and
-            communicate with cross-functional teams.
+            Scientist turned founder and product manager. I bring analytical
+            rigor and systems thinking to building intuitive, user-centered
+            products. Looking to join a team where I can drive impact through
+            innovation, strategy, execution, and collaboration.
           </div>,
           <span>
             Email me{" "}
             <a
               href="mailto:steve.colvin@alum.mit.edu"
-              style={{ color: "#90CAF9" }}
+              style={{
+                color: "#0b3b9c",
+                textDecoration: "none",
+                fontWeight: "bold",
+              }}
             >
               steve.colvin@alum.mit.edu
             </a>
@@ -97,6 +101,11 @@ function Home() {
               href="https://github.com/rissois/"
               target="_blank"
               rel="noopener noreferrer"
+              style={{
+                color: "#0b3b9c",
+                textDecoration: "none",
+                fontWeight: "bold",
+              }}
             >
               Github page
             </Link>

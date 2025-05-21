@@ -30,11 +30,11 @@ function Header() {
 
   return (
     <React.Fragment>
-      <AppBar position="fixed" sx={{ backgroundColor: "#0404040" }}>
+      <AppBar position="fixed" sx={{ backgroundColor: "#000" }}>
         <Toolbar sx={{ justifyContent: "flex-end" }}>
           {pathname.length > 1 && (
             <Box sx={{ flexGrow: 1 }}>
-              <IconButton onClick={() => navigate(-1)}>
+              <IconButton onClick={() => navigate("/")}>
                 <Home />
               </IconButton>
             </Box>
